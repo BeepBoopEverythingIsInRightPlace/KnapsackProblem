@@ -3,8 +3,6 @@ import com.company.Main;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 public class MainTest {
@@ -17,24 +15,20 @@ public class MainTest {
 
     @Test
     public void pickBestItemsReturnTest() {
-        ArrayList<Item> bestItems = new ArrayList<Item>();
         Main.prepareItems();
-        Assert.assertTrue(Main.pickBestItems(new ArrayList<Item>()) instanceof List);
+        Assert.assertTrue(Main.pickBestItems() instanceof List);
     }
 
     @Test
     public void pickBestItemsReturnNullTest() {
-        ArrayList<Item> bestItems = new ArrayList<Item>();
         Main.prepareItems();
-        Assert.assertNotNull(Main.pickBestItems(new ArrayList<Item>()));
+        Assert.assertNotNull(Main.pickBestItems());
     }
 
     @Test
     public void itemsSortTest() {
-        List<Item> bestItems = new ArrayList<Item>();
         Main.prepareItems();
-        bestItems = Main.pickBestItems(Main.itemsToTake);
-        Main.sortItemsToTake();
+        Main.pickBestItems();
         for (int i = 0; i < Main.itemsToTake.size() - 1 ; i++) {
             checkSorting(i);
         }

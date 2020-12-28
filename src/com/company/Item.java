@@ -13,7 +13,7 @@ public class Item implements Comparable{
 
         this.weight = weight;
         this.value = value;
-        this.valueToWeightRatio = value / weight;
+        this.valueToWeightRatio = (double)value / weight;
     }
 
     @Override
@@ -24,6 +24,6 @@ public class Item implements Comparable{
 
     @Override
     public String toString() {
-        return "value: " + this.value + ", weight: " + this.weight;
+        return "\nvalue: " + this.value + ", weight: " + this.weight;
     }
 }

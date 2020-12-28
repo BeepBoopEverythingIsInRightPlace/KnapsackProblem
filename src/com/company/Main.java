@@ -10,7 +10,7 @@ public class Main {
     public static void main(String[] args) {
 
         prepareItems();
-        //pickBestItems()
+        System.out.println(pickBestItems());
     }
 
     public static void prepareItems() {
@@ -21,7 +21,7 @@ public class Main {
     }
 
     //Zastosuje alorytm aproksymacyjny
-    public static List<Item> pickBestItems(List<Item> items) {
+    public static List<Item> pickBestItems() {
         sortItemsToTake();
         for (int i = 0; i < itemsToTake.size(); i++) {
             if (itemFitsInKnapSack(i)) {
@@ -32,8 +32,8 @@ public class Main {
         return Knapsack.sack;
     }
 
-    private static boolean addToKnapsack(int i) {
-        return Knapsack.sack.add(itemsToTake.get(i));
+    private static void addToKnapsack(int i) {
+        Knapsack.sack.add(itemsToTake.get(i));
     }
 
     private static boolean itemFitsInKnapSack(int i) {
